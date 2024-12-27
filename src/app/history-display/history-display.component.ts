@@ -13,12 +13,4 @@ import {MatCardModule} from '@angular/material/card';
 })
 export class HistoryDisplayComponent {
   @Input() history: { roman: string; decimal: number | null }[] = [];
-
-  getChunks(): { roman: string; decimal: number | null }[][] {
-    const chunks = [];
-    for (let i = 0; i < this.history.length; i += 3) {
-      chunks.push(this.history.slice(i, i + 3));
-    }
-    return chunks;
-  }
 }
