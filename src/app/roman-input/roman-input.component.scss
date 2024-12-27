@@ -1,0 +1,23 @@
+.converter-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 12px;
+
+  .full-width {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .result-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .result-card {
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}

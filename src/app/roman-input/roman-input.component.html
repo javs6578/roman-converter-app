@@ -1,0 +1,13 @@
+<div class="converter">
+  <input
+    [(ngModel)]="romanInput"
+    placeholder="Enter Roman numeral"
+    maxlength="15"
+    (keydown.enter)="convertRoman()"
+  />
+  <button (click)="convertRoman()">Convert</button>
+  <p *ngIf="conversionResult">
+    Result: {{ conversionResult.decimal !== null ? conversionResult.decimal : 'Invalid Input' }}
+  </p>
+</div>
+<app-history-display [history]="history"></app-history-display>

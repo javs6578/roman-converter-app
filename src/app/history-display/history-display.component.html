@@ -1,0 +1,14 @@
+<div class="history">
+  <mat-grid-list cols="3" rowHeight="150px" gutterSize="16px">
+    <mat-grid-tile *ngFor="let item of history">
+      <mat-card class="history-item mat-elevation-z3">
+        <mat-card-header>
+          <mat-card-title>Roman: {{ item.roman }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p><strong>Decimal:</strong> {{ item.decimal !== null ? item.decimal : 'Invalid Input' }}</p>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
