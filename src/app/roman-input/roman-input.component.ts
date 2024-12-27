@@ -45,14 +45,6 @@ export class RomanInputComponent {
   onEnter(event: Event): void {
     if (event instanceof KeyboardEvent) {
       event.preventDefault();
-      const trimmedInput = this.romanInput.trim();
-
-      if (!trimmedInput) {
-        // Si está vacío o solo hay espacios
-        this.isValidRoman = false;
-        return;
-      }
-
       this.validateRomanInput();
       if (!this.isValidRoman) {
         // Si no es válido, mostrar error
@@ -71,7 +63,14 @@ export class RomanInputComponent {
   }
 
   validateRomanInput(): void {
+    const trimmedInput = this.romanInput.trim();
     const romanPattern = /^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/;
+
+    if (!trimmedInput) {
+      // Si está vacío o solo hay espacios
+      this.isValidRoman = false;
+      return;
+    }
     this.isValidRoman = romanPattern.test(this.romanInput.toUpperCase());
   }
 }
