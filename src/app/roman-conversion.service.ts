@@ -9,7 +9,6 @@ export class RomanConversionService {
   };
 
   convertRomanToDecimal(roman: string): number | null {
-    if (!this.isValidRoman(roman)) return null;
     let decimal = 0;
     let prevValue = 0;
 
@@ -24,10 +23,5 @@ export class RomanConversionService {
     }
 
     return decimal;
-  }
-
-  private isValidRoman(roman: string): boolean {
-    const romanPattern = /^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/;
-    return romanPattern.test(roman.toUpperCase());
   }
 }
