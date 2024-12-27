@@ -1,13 +1,32 @@
-<div class="converter">
-  <input
-    [(ngModel)]="romanInput"
-    placeholder="Enter Roman numeral"
-    maxlength="15"
-    (keydown.enter)="convertRoman()"
-  />
-  <button (click)="convertRoman()">Convert</button>
-  <p *ngIf="conversionResult">
-    Result: {{ conversionResult.decimal !== null ? conversionResult.decimal : 'Invalid Input' }}
-  </p>
-</div>
-<app-history-display [history]="history"></app-history-display>
+<mat-card class="converter-container mat-elevation-z4">
+  <mat-card-header>
+    <mat-card-title>Roman Numeral Converter</mat-card-title>
+    <mat-card-subtitle>Enter a Roman numeral to get its decimal value</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Enter Roman numeral</mat-label>
+      <input
+        matInput
+        [(ngModel)]="romanInput"
+        #romanInputField="ngModel"
+        required
+        (keydown.enter)="onEnter($event)"
+        placeholder="E.g. XIV"
+        maxlength="15"
+      />
+    </mat-form-field>
+
+    <p *ngIf="!isValidRoman" class="error-message">
+      <strong>Error:</strong> Not a valid Roman numeral.
+    </p>
+
+    <p *ngIf="conversionResult && isValidRoman" class="result mb-4">
+      Result:
+      <strong>{{ conversionResult.decimal }}</strong>
+    </p>
+  </mat-card-content>
+
+  <app-history-display [history]="history"></app-history-display>
+</mat-card>

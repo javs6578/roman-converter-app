@@ -3,21 +3,23 @@
   margin: 30px auto;
   padding: 20px;
   border-radius: 12px;
+  background-color: #f9f9f9;
 
   .full-width {
     width: 100%;
     margin-top: 10px;
   }
 
-  .result-container {
-    margin-top: 20px;
+  .result {
+    font-size: 1.2rem;
+    margin-top: 15px;
     text-align: center;
   }
 
-  .result-card {
-    background-color: #f3f4f6;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  .error-message {
+    color: #f44336;
+    font-size: 1rem;
+    margin-top: 10px;
+    text-align: center;
   }
 }
